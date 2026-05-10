@@ -23,12 +23,25 @@ export default function PricingPage() {
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Choose the right plan faster.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Start free to explore. Most teams choose Pro when they need reliable
+            production runs, shared workflows, and longer visibility into logs.
           </p>
+          <div className="mt-6 max-w-xl rounded-md bg-zinc-900 p-5 shadow-[0_0_0_1px_rgba(82,82,91,0.45)]">
+            <div className="flex items-center justify-between gap-4">
+              <p className="text-sm font-medium text-zinc-100">Recommended: Pro</p>
+              <span className="text-[10px] uppercase tracking-widest text-emerald-400">
+                best for teams
+              </span>
+            </div>
+            <ul className="mt-3 space-y-2 text-sm text-zinc-400">
+              <li>• Running agents in production or customer-facing workflows</li>
+              <li>• Need unlimited runs and workflows without monthly caps</li>
+              <li>• Want team sharing, audit logs, and 90-day retention</li>
+            </ul>
+          </div>
         </header>
 
         <section className="grid gap-6 md:grid-cols-2">
