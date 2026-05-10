@@ -23,11 +23,11 @@ export default function PricingPage() {
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Start free. Upgrade when production needs it.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Choose the right workflow limit now, then add unlimited runs,
+            longer retention, team sharing, and audit logs when you are ready.
           </p>
         </header>
 
