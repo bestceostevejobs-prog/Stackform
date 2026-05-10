@@ -23,11 +23,12 @@ export default function PricingPage() {
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Start free. Scale with confidence.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Choose the plan that fits your workflow today. Every pricing page
+            view and upgrade click is tracked so your team can measure the full
+            path from evaluation to activation.
           </p>
         </header>
 
