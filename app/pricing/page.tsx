@@ -7,12 +7,11 @@ import { api } from "@/convex/_generated/api";
 import { PRO_PRICE_ID } from "@/lib/stripe/config";
 import { UpgradeButton } from "@/components/UpgradeButton";
 
-// TODO: update copy for team leads (see experiment-log.md exp_003)
 export default function PricingPage() {
   const trackPricingPageView = useMutation(api.analytics.trackPricingPageView);
 
   useEffect(() => {
-    trackPricingPageView({ source: "direct" });
+    trackPricingPageView({ source: "direct", experiment_variant: "exp_003" });
   }, [trackPricingPageView]);
 
   return (
@@ -23,11 +22,11 @@ export default function PricingPage() {
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            See what your team's agents are doing.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Give your team shared workflows, audit logs, and 90-day retention so
+            production agent activity stays visible.
           </p>
         </header>
 
@@ -59,13 +58,13 @@ export default function PricingPage() {
             name="Pro"
             price="$49"
             cadence="per month"
-            description="For teams running agents in production."
+            description="For teams that need visibility into what their agents are doing."
             features={[
+              "Audit logs",
+              "Team sharing",
+              "90-day log retention",
               "Unlimited runs",
               "Unlimited workflows",
-              "90-day log retention",
-              "Team sharing",
-              "Audit logs",
             ]}
             cta={<UpgradeButton priceId={PRO_PRICE_ID} />}
           />
@@ -137,7 +136,7 @@ function PlanCard({
         ))}
       </ul>
 
-      <div className="mt-10">{cta}</div>
+      <div className="mt-10 pb-20">{cta}</div>
     </div>
   );
 }
