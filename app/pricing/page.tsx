@@ -7,7 +7,6 @@ import { api } from "@/convex/_generated/api";
 import { PRO_PRICE_ID } from "@/lib/stripe/config";
 import { UpgradeButton } from "@/components/UpgradeButton";
 
-// TODO: update copy for team leads (see experiment-log.md exp_003)
 export default function PricingPage() {
   const trackPricingPageView = useMutation(api.analytics.trackPricingPageView);
 
@@ -17,17 +16,18 @@ export default function PricingPage() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-200 font-mono">
+      {/* TODO: fix mobile padding — button clipped on Safari iOS (see conversion-drop-analysis.md) */}
       <div className="mx-auto max-w-5xl px-6 py-24">
         <header className="mb-16">
           <p className="text-xs uppercase tracking-widest text-zinc-500">
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Built for power users.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Start free. Upgrade for unlimited runs and the headroom solo
+            developers need to ship as fast as they can think.
           </p>
         </header>
 
@@ -59,14 +59,13 @@ export default function PricingPage() {
             name="Pro"
             price="$49"
             cadence="per month"
-            description="For teams running agents in production."
+            description="For solo developers who've outgrown the free tier."
             features={[
               "Unlimited runs",
               "Unlimited workflows",
               "90-day log retention",
-              "Team sharing",
-              "Audit logs",
             ]}
+            secondaryFeatures={["Team sharing", "Audit logs"]}
             cta={<UpgradeButton priceId={PRO_PRICE_ID} />}
           />
         </section>
@@ -85,6 +84,7 @@ type PlanCardProps = {
   cadence: string;
   description: string;
   features: string[];
+  secondaryFeatures?: string[];
   cta: React.ReactNode;
   highlighted?: boolean;
 };
@@ -95,6 +95,7 @@ function PlanCard({
   cadence,
   description,
   features,
+  secondaryFeatures,
   cta,
   highlighted,
 }: PlanCardProps) {
@@ -137,6 +138,22 @@ function PlanCard({
         ))}
       </ul>
 
+      {secondaryFeatures && secondaryFeatures.length > 0 ? (
+        <ul className="mt-4 space-y-2 text-xs text-zinc-500">
+          {secondaryFeatures.map((feature) => (
+            <li key={feature} className="flex items-start gap-2">
+              <Check
+                size={11}
+                weight="bold"
+                className="mt-[3px] shrink-0 text-zinc-600"
+              />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
+      {/* TODO: update copy for team leads (see experiment-log.md exp_003) */}
       <div className="mt-10">{cta}</div>
     </div>
   );
