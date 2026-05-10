@@ -18,16 +18,16 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-200 font-mono">
       <div className="mx-auto max-w-5xl px-6 py-24">
-        <header className="mb-16">
+        <header className="mb-16 text-center">
           <p className="text-xs uppercase tracking-widest text-zinc-500">
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Choose the right plan for your agents.
           </h1>
-          <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-zinc-400">
+            Start free to validate your workflows. Upgrade to Pro when your team
+            needs unlimited runs, shared workflows, and production-ready history.
           </p>
         </header>
 
@@ -36,7 +36,7 @@ export default function PricingPage() {
             name="Free"
             price="$0"
             cadence="forever"
-            description="For solo developers kicking the tires."
+            description="For solo developers exploring and testing workflows."
             features={[
               "3 workflows",
               "100 runs per month",
@@ -59,7 +59,7 @@ export default function PricingPage() {
             name="Pro"
             price="$49"
             cadence="per month"
-            description="For teams running agents in production."
+            description="Recommended for teams running agents in production."
             features={[
               "Unlimited runs",
               "Unlimited workflows",
