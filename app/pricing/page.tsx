@@ -23,11 +23,11 @@ export default function PricingPage() {
             // pricing
           </p>
           <h1 className="mt-3 text-3xl font-medium text-zinc-50">
-            Pick a plan.
+            Choose the right plan for your workflows.
           </h1>
           <p className="mt-3 max-w-xl text-sm text-zinc-400">
-            Start free. Upgrade when your team needs more runs, longer
-            retention, or shared workflows.
+            Start free to test locally. Upgrade to Pro when your team needs
+            production-scale runs, shared workflows, and longer retention.
           </p>
         </header>
 
@@ -36,7 +36,7 @@ export default function PricingPage() {
             name="Free"
             price="$0"
             cadence="forever"
-            description="For solo developers kicking the tires."
+            description="Best for trying the product and validating a few workflows."
             features={[
               "3 workflows",
               "100 runs per month",
@@ -59,7 +59,7 @@ export default function PricingPage() {
             name="Pro"
             price="$49"
             cadence="per month"
-            description="For teams running agents in production."
+            description="Recommended for teams running agents in production."
             features={[
               "Unlimited runs",
               "Unlimited workflows",
@@ -102,16 +102,16 @@ function PlanCard({
     <div
       className={
         highlighted
-          ? "bg-zinc-900 p-8 shadow-[0_0_0_1px_rgba(82,82,91,0.6)]"
+          ? "relative bg-zinc-900 p-8 shadow-[0_0_0_1px_rgba(82,82,91,0.6)]"
           : "bg-zinc-950 p-8 shadow-[0_0_0_1px_rgba(39,39,42,1)]"
       }
     >
-      <div className="flex items-baseline justify-between">
+      <div className="flex items-baseline justify-between gap-4">
         <h2 className="text-sm uppercase tracking-widest text-zinc-400">
           {name}
         </h2>
         {highlighted ? (
-          <span className="text-[10px] uppercase tracking-widest text-emerald-400">
+          <span className="rounded-full bg-emerald-400/10 px-2 py-1 text-[10px] uppercase tracking-widest text-emerald-300 ring-1 ring-inset ring-emerald-400/20">
             recommended
           </span>
         ) : null}
